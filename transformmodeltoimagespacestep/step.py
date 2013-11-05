@@ -35,8 +35,8 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
                       'ju#fieldworkmodeldict'))
         self._config = {}
         self._config['identifier'] = ''
-        self._config['Mirror'] = 'True'
-        self._config['Z Shift'] = 'True'
+        self._config['Mirror'] = 'False'
+        self._config['Z Shift'] = 'False'
 
         self._scan = None
         self._inputModelDict = None
