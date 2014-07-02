@@ -7,8 +7,8 @@ import os
 from PySide import QtGui
 from PySide import QtCore
 
-from mountpoints.workflowstep import WorkflowStepMountPoint
-from transformmodeltoimagespacestep.configuredialog import ConfigureDialog
+from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
+from mapclientplugins.transformmodeltoimagespacestep.configuredialog import ConfigureDialog
 
 from workutils import fieldwork_seg_tools as fst
 
