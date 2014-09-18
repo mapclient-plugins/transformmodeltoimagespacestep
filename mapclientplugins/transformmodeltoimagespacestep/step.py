@@ -10,7 +10,7 @@ from PySide import QtCore
 from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
 from mapclientplugins.transformmodeltoimagespacestep.configuredialog import ConfigureDialog
 
-from workutils import fieldwork_seg_tools as fst
+from gias.musculoskeletal import fw_segmentation_tools as fst
 
 class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
     '''
