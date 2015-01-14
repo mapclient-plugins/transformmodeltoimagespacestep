@@ -59,7 +59,7 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
             zs = True
 
         self._outputModelDict = {}
-        for name, gf in self._inputModelDict.items():
+        for name, gf in list(self._inputModelDict.items()):
             self._outputModelDict[name] = fst.makeImageSpaceGF(self._scan, gf, negSpacing=ns, zShift=zs)
 
         self._doneExecution()
@@ -72,9 +72,9 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
         '''
         if index == 1:
             if len(dataIn)>1:
-                raise ValueError, 'only one image supported.'
+                raise ValueError('only one image supported.')
 
-            self._scan = dataIn.values()[0] # ju#giasscandict
+            self._scan = list(dataIn.values())[0] # ju#giasscandict
         else:
             self._inputModelDict = dataIn # ju#fieldworkmodeldict
 
