@@ -1,4 +1,3 @@
-
 '''
 MAP Client Plugin Step
 '''
@@ -10,6 +9,7 @@ from mapclientplugins.transformmodeltoimagespacestep.configuredialog import Conf
 
 from gias2.image_analysis import fw_segmentation_tools as fst
 
+
 class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
     '''
     Skeleton step which is intended to be a helpful starting point
@@ -18,7 +18,7 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
 
     def __init__(self, location):
         super(TransformModeltoImageSpaceStep, self).__init__('Transform Model to Image Space', location)
-        self._configured = False # A step cannot be executed until it has been configured.
+        self._configured = False  # A step cannot be executed until it has been configured.
         self._category = 'Registration'
         # Add any other initialisation code here:
         # Ports:
@@ -46,14 +46,14 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
         Make sure you call the _doneExecution() method when finished.  This method
         may be connected up to a button in a widget for example.
         '''
-        if self._config['Mirror']=='False':
+        if self._config['Mirror'] == 'False':
             ns = False
-        elif self._config['Mirror']=='True':
+        elif self._config['Mirror'] == 'True':
             ns = True
-    
-        if self._config['Z Shift']=='False':
+
+        if self._config['Z Shift'] == 'False':
             zs = False
-        elif self._config['Z Shift']=='True':
+        elif self._config['Z Shift'] == 'True':
             zs = True
 
         self._outputModelDict = {}
@@ -69,12 +69,12 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
         uses port for this step then the index can be ignored.
         '''
         if index == 1:
-            if len(dataIn)>1:
+            if len(dataIn) > 1:
                 raise ValueError('only one image supported.')
 
-            self._scan = list(dataIn.values())[0] # ju#giasscandict
+            self._scan = list(dataIn.values())[0]  # ju#giasscandict
         else:
-            self._inputModelDict = dataIn # ju#fieldworkmodeldict
+            self._inputModelDict = dataIn  # ju#fieldworkmodeldict
 
     def getPortData(self, index):
         '''
@@ -97,10 +97,10 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
         dlg.setConfig(self._config)
         dlg.validate()
         dlg.setModal(True)
-        
+
         if dlg.exec_():
             self._config = dlg.getConfig()
-        
+
         self._configured = dlg.validate()
         self._configuredObserver()
 
@@ -134,5 +134,3 @@ class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
         d.identifierOccursCount = self._identifierOccursCount
         d.setConfig(self._config)
         self._configured = d.validate()
-
-
