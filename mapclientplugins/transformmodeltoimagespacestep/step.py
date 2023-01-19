@@ -7,7 +7,7 @@ import json
 from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
 from mapclientplugins.transformmodeltoimagespacestep.configuredialog import ConfigureDialog
 
-from gias2.image_analysis import fw_segmentation_tools as fst
+from gias3.image_analysis import fw_segmentation_tools as fst
 
 
 class TransformModeltoImageSpaceStep(WorkflowStepMountPoint):
