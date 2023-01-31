@@ -20,6 +20,6 @@ This file is part of MAP Client. (http://launchpad.net/mapclient)
 __version__ = '0.2.0'
 __author__ = 'Ju Zhang'
 __stepname__ = 'Transform Model to Image Space'
-__location__ = 'https://github.com/mapclient-plugins/transformmodeltoimagespacestep/archive/master.zip'
+__location__ = 'https://github.com/mapclient-plugins/transformmodeltoimagespacestep'
 
 from mapclientplugins.transformmodeltoimagespacestep import step
